@@ -26,6 +26,9 @@ import {
   techGroups,
 } from "./data/portfolio";
 
+const assetPath = (filename: string) =>
+  `${import.meta.env.BASE_URL}assets/${filename}`;
+
 function PhotoPlaceholder({
   title,
   note,
@@ -64,7 +67,7 @@ export function WorldPortfolio() {
       <WorldChapter
         id="code"
         className="chapter-code"
-        image="/assets/meadow-world.jpg"
+        image={assetPath("meadow-world.jpg")}
         labelledBy="code-title"
       >
         <div className="chapter-panel code-intro-panel">
@@ -135,7 +138,7 @@ export function WorldPortfolio() {
       <WorldChapter
         id="clothing"
         className="chapter-clothing"
-        image="/assets/alpine-world.jpg"
+        image={assetPath("alpine-world.jpg")}
         labelledBy="clothing-title"
       >
         <div className="chapter-panel clothing-intro-panel">
@@ -186,7 +189,7 @@ export function WorldPortfolio() {
       <WorldChapter
         id="life"
         className="chapter-life"
-        image="/assets/garden-sunset-world.jpg"
+        image={assetPath("garden-sunset-world.jpg")}
         labelledBy="life-title"
       >
         <div className="chapter-panel life-intro-panel">

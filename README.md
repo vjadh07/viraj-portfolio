@@ -2,6 +2,8 @@
 
 A single responsive portfolio told through three scenic paper-collage chapters: Code, Clothing, and Life.
 
+**Live preview:** https://vjadh07.github.io/viraj-portfolio/
+
 ## Run locally
 
 ```bash
