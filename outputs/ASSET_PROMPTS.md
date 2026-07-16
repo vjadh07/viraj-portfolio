@@ -21,3 +21,9 @@ Use case: stylized-concept. Wide landing-page scenic background for a paper-coll
 Use case: lighting and weather edit. Preserve the original garden composition, camera, geography, cut-paper construction, botanicals, lake, hills, clouds, tactile fibers, grain, and open right-center atmosphere. Shift the scene to a happy early-evening sunset after summer rain: lavender-blue upper sky, peach and coral light near the horizon, luminous cloud edges, a warm golden reflection across the lake, and lively teal foliage with subtle rosy edge light. Keep enough dusk-blue depth for pale paper cards to remain readable. Sophisticated editorial cut-paper collage with watercolor-gouache textures and subtle screenprint grain. Joyful, welcoming, intimate, dreamy, optimistic, and adult. No text, people, buildings, new objects, gothic mood, neon color, or oversaturated orange.
 
 The original blue-hour version remains preserved as `public/assets/garden-world.jpg`; the site uses the warmer sunset edit.
+
+## Viraj Hero Portrait Cutout
+
+**Final website asset:** `public/assets/viraj-paper-cutout.png`
+
+Use case: background-extraction and identity-preserving edit. Preserve Viraj's exact face, smile, expression, skin tone, curly hair, mustache, upper-body pose, cream baseball jersey, and camouflage backpack straps from the supplied portrait. Remove the phone screenshot interface and the entire outdoor background. Keep the person photographic, add restrained screen-print grain, and mount the silhouette on a thin warm off-white hand-cut paper backing. Generate the backed silhouette against a perfectly flat solid magenta chroma-key field, then remove the key locally to produce a transparent PNG. No added objects, text, scenery, cartoon styling, or cast shadow.

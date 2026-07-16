@@ -82,6 +82,17 @@ export function WorldPortfolio() {
             </a>
           </Paper>
 
+          <figure className="hero-portrait">
+            <img
+              src={assetPath("viraj-paper-cutout.png")}
+              alt="Viraj smiling in a cream baseball jersey and backpack"
+              width="700"
+              height="1400"
+              decoding="async"
+              fetchPriority="high"
+            />
+          </figure>
+
           <Paper className="code-side-note" tilt={3.2}>
             <Code aria-hidden="true" />
             <p>Software can be rigorous and still feel personal.</p>
