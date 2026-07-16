@@ -3,6 +3,7 @@ export type CodeProject = {
   description: string;
   stack: string;
   linkLabel: string;
+  repositoryUrl: string;
 };
 
 export type PhotoSlot = {
@@ -22,43 +23,45 @@ export const profile = {
   email: "hello@virajjadhav.com",
 };
 
-// Replace these structured placeholders with Viraj's real projects.
 export const codeProjects: CodeProject[] = [
   {
-    title: "Your strongest build",
+    title: "Cue",
     description:
-      "Add the problem you solved, the choices you made, and what became better because of the work.",
-    stack: "Add your stack",
-    linkLabel: "Add case study",
+      "A direction-first voice studio that turns plain-English notes into expressive, line-by-line performances. I built model and voice fallbacks, guarded settings, content-addressed audio caching, retakes, DSP feedback, and a private local voice-cloning path.",
+    stack: "Python · FastAPI · Next.js · TypeScript",
+    linkLabel: "Explore Cue",
+    repositoryUrl: "https://github.com/vjadh07/cue",
   },
   {
-    title: "A systems project",
+    title: "Airlock",
     description:
-      "Use this space for coursework, infrastructure, research, or a technically demanding collaboration.",
-    stack: "Add tools and languages",
-    linkLabel: "Add repository",
+      "A guardian agent that statically inspects npm packages before installation and returns an ALLOW, FLAG, or BLOCK verdict. The model guides the investigation and explains the evidence; deterministic rules make the final call.",
+    stack: "Python · FastAPI · Electron · MCP",
+    linkLabel: "Inspect Airlock",
+    repositoryUrl: "https://github.com/vjadh07/airlock",
   },
   {
-    title: "A playful experiment",
+    title: "My Digital Postcard",
     description:
-      "Show the project that best connects your engineering practice to your visual or personal interests.",
-    stack: "Add the interesting part",
-    linkLabel: "Add live demo",
+      "A dependency-free browser camera that turns a photo into a film-graded postage stamp. Its WebGL2 pipeline applies real 3D LUTs, halation, bloom, grain, and a custom stamp compositor before exporting the finished PNG.",
+    stack: "JavaScript · WebGL2 · Canvas · 3D LUTs",
+    linkLabel: "Open the film lab",
+    repositoryUrl: "https://github.com/vjadh07/my-digital-postcard",
   },
 ];
 
 export const techGroups = [
   {
     title: "Languages",
-    items: ["Add language", "Add language", "Add language"],
+    items: ["Python", "TypeScript", "JavaScript"],
   },
   {
     title: "Building with",
-    items: ["Add framework", "Add platform", "Add database"],
+    items: ["FastAPI + Next.js", "WebGL + Canvas", "Local and cloud AI"],
   },
   {
     title: "Interested in",
-    items: ["Software systems", "Creative tools", "Human-centered products"],
+    items: ["Reliable AI systems", "Creative tools", "Human-centered products"],
   },
 ];
 
@@ -118,4 +121,3 @@ export const movies = [
   "Add a visual favorite",
   "Add a comfort watch",
 ];
-

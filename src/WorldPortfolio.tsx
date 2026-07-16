@@ -105,7 +105,10 @@ export function WorldPortfolio() {
               <TerminalWindow aria-hidden="true" />
               <div>
                 <h2>Things I build</h2>
-                <p>Replace these prompts with your three strongest CS projects.</p>
+                <p>
+                  Voice direction, package defense, and a tiny film lab—built
+                  with equal parts systems thinking and play.
+                </p>
               </div>
             </div>
 
@@ -116,7 +119,12 @@ export function WorldPortfolio() {
                     <p className="project-stack">{project.stack}</p>
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
-                    <a href="#contact">
+                    <a
+                      href={project.repositoryUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${project.linkLabel}: ${project.title} (opens in a new tab)`}
+                    >
                       {project.linkLabel} <ArrowUpRight aria-hidden="true" />
                     </a>
                   </div>
