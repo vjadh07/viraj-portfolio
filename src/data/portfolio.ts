@@ -2,8 +2,9 @@ export type CodeProject = {
   title: string;
   description: string;
   stack: string;
-  linkLabel: string;
-  repositoryUrl: string;
+  linkLabel?: string;
+  projectUrl?: string;
+  availability?: string;
 };
 
 export type PhotoSlot = {
@@ -30,38 +31,37 @@ export const codeProjects: CodeProject[] = [
       "A direction-first voice studio that turns plain-English notes into expressive, line-by-line performances. I built model and voice fallbacks, guarded settings, content-addressed audio caching, retakes, DSP feedback, and a private local voice-cloning path.",
     stack: "Python · FastAPI · Next.js · TypeScript",
     linkLabel: "Explore Cue",
-    repositoryUrl: "https://github.com/vjadh07/cue",
+    projectUrl: "https://github.com/vjadh07/cue",
   },
   {
-    title: "Airlock",
+    title: "Saga",
     description:
-      "A guardian agent that statically inspects npm packages before installation and returns an ALLOW, FLAG, or BLOCK verdict. The model guides the investigation and explains the evidence; deterministic rules make the final call.",
-    stack: "Python · FastAPI · Electron · MCP",
-    linkLabel: "Inspect Airlock",
-    repositoryUrl: "https://github.com/vjadh07/airlock",
+      "An adversarial evidence-auditing agent for AI-written reports. Saga maps individual claims, researches support and contradictions, validates citations and source quality, checks dates and arithmetic, then returns corrected prose with a verifiable Trust Passport.",
+    stack: "TypeScript · Node.js · SQLite · Gemini",
+    linkLabel: "Try Saga",
+    projectUrl: "https://saga-omega-seven.vercel.app/demo",
   },
   {
-    title: "My Digital Postcard",
+    title: "Operating System Kernel",
     description:
-      "A dependency-free browser camera that turns a photo into a film-graded postage stamp. Its WebGL2 pipeline applies real 3D LUTs, halation, bloom, grain, and a custom stamp compositor before exporting the finished PNG.",
-    stack: "JavaScript · WebGL2 · Canvas · 3D LUTs",
-    linkLabel: "Open the film lab",
-    repositoryUrl: "https://github.com/vjadh07/my-digital-postcard",
+      "A monolithic x86_64 kernel with virtual memory management, ELF executable loading, paging, multicore support, a Round-Robin scheduler, and system-call interfaces for user-space programs.",
+    stack: "C · C++ · Linux · x86_64 Assembly",
+    availability: "Systems coursework · source private",
   },
 ];
 
 export const techGroups = [
   {
     title: "Languages",
-    items: ["Python", "TypeScript", "JavaScript"],
+    items: ["Python", "TypeScript", "C / C++"],
   },
   {
     title: "Building with",
-    items: ["FastAPI + Next.js", "WebGL + Canvas", "Local and cloud AI"],
+    items: ["FastAPI + Next.js", "Node.js + SQLite", "Linux + x86_64"],
   },
   {
     title: "Interested in",
-    items: ["Reliable AI systems", "Creative tools", "Human-centered products"],
+    items: ["Reliable AI systems", "Systems software", "Human-centered products"],
   },
 ];
 

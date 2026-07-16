@@ -106,8 +106,8 @@ export function WorldPortfolio() {
               <div>
                 <h2>Things I build</h2>
                 <p>
-                  Voice direction, package defense, and a tiny film lab—built
-                  with equal parts systems thinking and play.
+                  Expressive AI, evidence you can audit, and a kernel built
+                  close to the metal.
                 </p>
               </div>
             </div>
@@ -119,14 +119,18 @@ export function WorldPortfolio() {
                     <p className="project-stack">{project.stack}</p>
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
-                    <a
-                      href={project.repositoryUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`${project.linkLabel}: ${project.title} (opens in a new tab)`}
-                    >
-                      {project.linkLabel} <ArrowUpRight aria-hidden="true" />
-                    </a>
+                    {project.projectUrl && project.linkLabel ? (
+                      <a
+                        href={project.projectUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${project.linkLabel}: ${project.title} (opens in a new tab)`}
+                      >
+                        {project.linkLabel} <ArrowUpRight aria-hidden="true" />
+                      </a>
+                    ) : project.availability ? (
+                      <span className="project-availability">{project.availability}</span>
+                    ) : null}
                   </div>
                 </article>
               ))}
