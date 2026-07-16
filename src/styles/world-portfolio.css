@@ -460,6 +460,10 @@ img {
 
 .code-project {
   position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
   padding: clamp(1.4rem, 2.5vw, 2.4rem);
   background: #e1e7df;
   clip-path: polygon(1% 2%, 18% 0, 36% 2%, 53% 0.5%, 72% 2.2%, 99% 0.6%, 98% 97%, 77% 99.5%, 55% 97.5%, 34% 100%, 2% 97%);
@@ -467,9 +471,7 @@ img {
 
 .code-project-1 {
   grid-row: span 2;
-  display: flex;
   min-height: 26rem;
-  align-items: flex-end;
   color: #f8f4e8;
   background: #2e4d3e;
 }
@@ -480,6 +482,180 @@ img {
 
 .code-project-3 {
   background: #d5dfe2;
+}
+
+.project-copy {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+}
+
+.project-artifact {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  margin-bottom: clamp(1.4rem, 2.6vw, 2.4rem);
+}
+
+.project-artifact--cue {
+  display: grid;
+  min-height: clamp(13rem, 20vw, 18rem);
+  align-content: space-between;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  color: #163428;
+  background: #dce7d4;
+  box-shadow: 5px 6px 0 rgb(13 38 27 / 30%);
+  clip-path: polygon(2% 1%, 23% 3%, 45% 0, 68% 2%, 98% 1%, 100% 94%, 74% 98%, 48% 95%, 25% 100%, 1% 96%);
+  transform: rotate(-1deg);
+}
+
+.cue-direction-slip {
+  justify-self: start;
+  padding: 0.65rem 0.8rem;
+  background: #efd483;
+  box-shadow: 3px 3px 0 rgb(86 65 25 / 24%);
+  transform: rotate(1.4deg);
+}
+
+.cue-direction-slip span,
+.artifact-label {
+  display: block;
+  color: var(--accent);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cue-direction-slip strong {
+  display: block;
+  margin-top: 0.18rem;
+  font-family: "Newsreader Variable", ui-serif, Georgia, serif;
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+}
+
+.cue-waveform {
+  display: flex;
+  height: clamp(4.5rem, 8vw, 7rem);
+  align-items: center;
+  gap: clamp(0.16rem, 0.45vw, 0.36rem);
+  padding-inline: 0.35rem;
+}
+
+.cue-waveform span {
+  flex: 1 1 0;
+  min-width: 0.2rem;
+  background: var(--accent);
+  clip-path: polygon(8% 2%, 90% 0, 100% 96%, 12% 100%);
+}
+
+.cue-performance-arc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 760;
+  text-transform: uppercase;
+}
+
+.cue-performance-arc strong {
+  color: var(--accent);
+}
+
+.project-artifact--saga {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 1rem 1.1rem 1.15rem;
+  color: #173127;
+  background: #f7f1df;
+  box-shadow: 4px 5px 0 rgb(97 69 24 / 18%);
+  clip-path: polygon(1% 2%, 28% 0, 53% 3%, 76% 0, 99% 2%, 97% 96%, 72% 100%, 47% 97%, 25% 100%, 2% 96%);
+  transform: rotate(0.8deg);
+}
+
+.project-artifact--saga strong {
+  display: block;
+  margin: 0.25rem 0 0.45rem;
+  font-family: "Newsreader Variable", ui-serif, Georgia, serif;
+  font-size: clamp(1.35rem, 2.1vw, 2rem);
+  line-height: 1;
+}
+
+.project-artifact--saga ul {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  list-style: none;
+}
+
+.project-artifact--saga li::before {
+  margin-right: 0.35rem;
+  color: var(--accent);
+  content: "✓";
+}
+
+.saga-verdict {
+  align-self: center;
+  padding: 0.55rem;
+  color: var(--accent);
+  font-size: 0.65rem;
+  font-weight: 850;
+  letter-spacing: 0.07em;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid currentcolor;
+  transform: rotate(-5deg);
+}
+
+.project-artifact--kernel {
+  overflow: hidden;
+  color: #d4e8d2;
+  background: #17231e;
+  box-shadow: 4px 5px 0 rgb(30 49 42 / 20%);
+  clip-path: polygon(1% 1%, 24% 3%, 48% 0, 76% 2%, 99% 1%, 98% 97%, 74% 100%, 49% 97%, 24% 100%, 2% 97%);
+  transform: rotate(-0.7deg);
+}
+
+.kernel-terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.65rem 0.75rem;
+  color: #a9c5b2;
+  background: #24342d;
+}
+
+.kernel-terminal-bar > span {
+  width: 0.45rem;
+  height: 0.45rem;
+  background: #e2c972;
+  border-radius: 50%;
+}
+
+.kernel-terminal-bar > span:nth-child(2) {
+  background: #cf765f;
+}
+
+.kernel-terminal-bar > span:nth-child(3) {
+  background: #78a98a;
+}
+
+.kernel-terminal-bar strong {
+  margin-left: 0.25rem;
+  font: 650 0.68rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.project-artifact--kernel code {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+  color: inherit;
+  font: 650 0.7rem/1.35 ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 .project-stack {
@@ -500,10 +676,55 @@ img {
   line-height: 0.98;
 }
 
-.code-project > div > p:not(.project-stack) {
+.project-copy > p:not(.project-stack) {
   max-width: 43ch;
   margin: 0.8rem 0 1.2rem;
   line-height: 1.55;
+}
+
+.project-tech-stickers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0.2rem 0 1rem;
+}
+
+.tech-sticker {
+  display: inline-flex;
+  min-height: 2.25rem;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.42rem 0.62rem;
+  color: #183127;
+  font-size: 0.72rem;
+  font-weight: 790;
+  white-space: nowrap;
+  background: #faf3df;
+  box-shadow: 3px 3px 0 rgb(13 38 27 / 20%);
+  clip-path: polygon(2% 4%, 22% 0, 46% 4%, 73% 1%, 98% 5%, 96% 94%, 70% 100%, 45% 96%, 19% 100%, 1% 94%);
+}
+
+.tech-sticker-1 {
+  transform: rotate(-2deg);
+}
+
+.tech-sticker-2 {
+  transform: rotate(1.8deg);
+}
+
+.tech-sticker-3 {
+  transform: rotate(-1deg);
+}
+
+.tech-sticker-4 {
+  transform: rotate(2.6deg);
+}
+
+.tech-sticker svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: 0 0 auto;
+  fill: var(--tech-color);
 }
 
 .code-project a {
@@ -918,6 +1139,14 @@ img {
   .photo-slot__frame:hover {
     transform: translateY(-4px);
   }
+
+  .tech-sticker {
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .code-project:hover .tech-sticker {
+    transform: translateY(-2px) rotate(0);
+  }
 }
 
 @supports (animation-timeline: view()) {
@@ -1108,6 +1337,22 @@ img {
   .code-project-1 {
     grid-row: auto;
     min-height: 19rem;
+  }
+
+  .project-artifact--cue {
+    min-height: 13rem;
+  }
+
+  .project-artifact--saga {
+    grid-template-columns: 1fr;
+  }
+
+  .saga-verdict {
+    justify-self: start;
+  }
+
+  .tech-sticker {
+    font-size: 0.68rem;
   }
 
   .toolkit-groups section,

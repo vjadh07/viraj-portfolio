@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -12,6 +13,18 @@ import {
   TerminalWindow,
   TShirt,
 } from "@phosphor-icons/react";
+import {
+  siC,
+  siCplusplus,
+  siFastapi,
+  siGooglegemini,
+  siLinux,
+  siNextdotjs,
+  siNodedotjs,
+  siPython,
+  siSqlite,
+  siTypescript,
+} from "simple-icons";
 import { Paper, Tape } from "./components/CollagePieces";
 import { SiteNav } from "./components/SiteNav";
 import { WorldChapter } from "./components/WorldChapter";
@@ -23,11 +36,101 @@ import {
   profile,
   songs,
   stylePrinciples,
+  type TechKey,
   techGroups,
 } from "./data/portfolio";
 
 const assetPath = (filename: string) =>
   `${import.meta.env.BASE_URL}assets/${filename}`;
+
+const techIcons = {
+  python: siPython,
+  fastapi: siFastapi,
+  nextjs: siNextdotjs,
+  typescript: siTypescript,
+  nodejs: siNodedotjs,
+  sqlite: siSqlite,
+  gemini: siGooglegemini,
+  c: siC,
+  cplusplus: siCplusplus,
+  linux: siLinux,
+} satisfies Record<TechKey, { hex: string; path: string; title: string }>;
+
+const cueWaveform = [28, 46, 62, 38, 74, 90, 58, 44, 78, 96, 68, 52, 84, 64, 40, 30];
+
+function TechSticker({ technology, index }: { technology: TechKey; index: number }) {
+  const icon = techIcons[technology];
+
+  return (
+    <span
+      className={`tech-sticker tech-sticker-${index + 1}`}
+      style={{ "--tech-color": `#${icon.hex}` } as CSSProperties}
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d={icon.path} />
+      </svg>
+      <span>{icon.title}</span>
+    </span>
+  );
+}
+
+function ProjectArtifact({ kind }: { kind: "cue" | "saga" | "kernel" }) {
+  if (kind === "cue") {
+    return (
+      <figure className="project-artifact project-artifact--cue" aria-label="Cue performance direction preview">
+        <div className="cue-direction-slip">
+          <span>Director’s note</span>
+          <strong>Build from calm to furious.</strong>
+        </div>
+        <div className="cue-waveform" aria-hidden="true">
+          {cueWaveform.map((height, index) => (
+            <span key={`${height}-${index}`} style={{ height: `${height}%` }} />
+          ))}
+        </div>
+        <div className="cue-performance-arc">
+          <span>calm</span>
+          <span>serious</span>
+          <span>angry</span>
+          <strong>furious</strong>
+        </div>
+      </figure>
+    );
+  }
+
+  if (kind === "saga") {
+    return (
+      <figure className="project-artifact project-artifact--saga" aria-label="Saga Trust Passport sample">
+        <div>
+          <span className="artifact-label">Sample audit</span>
+          <strong>Trust Passport</strong>
+          <ul>
+            <li>Claims mapped</li>
+            <li>Sources traced</li>
+            <li>Receipt hashed</li>
+          </ul>
+        </div>
+        <span className="saga-verdict">evidence checked</span>
+      </figure>
+    );
+  }
+
+  return (
+    <figure className="project-artifact project-artifact--kernel" aria-label="Operating system kernel boot log">
+      <div className="kernel-terminal-bar">
+        <span />
+        <span />
+        <span />
+        <strong>kernel.log</strong>
+      </div>
+      <code>
+        <span>[boot] x86_64 multicore online</span>
+        <span>[vm] paging enabled</span>
+        <span>[elf] executable loader ready</span>
+        <span>[sched] round-robin active</span>
+      </code>
+    </figure>
+  );
+}
 
 function PhotoPlaceholder({
   title,
@@ -115,10 +218,20 @@ export function WorldPortfolio() {
             <div className="code-project-list">
               {codeProjects.map((project, index) => (
                 <article className={`code-project code-project-${index + 1}`} key={project.title}>
-                  <div>
+                  <ProjectArtifact kind={project.visual} />
+                  <div className="project-copy">
                     <p className="project-stack">{project.stack}</p>
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
+                    <div className="project-tech-stickers" aria-label={`${project.title} technologies`}>
+                      {project.technologies.map((technology, technologyIndex) => (
+                        <TechSticker
+                          key={technology}
+                          technology={technology}
+                          index={technologyIndex}
+                        />
+                      ))}
+                    </div>
                     {project.projectUrl && project.linkLabel ? (
                       <a
                         href={project.projectUrl}

@@ -1,7 +1,21 @@
+export type TechKey =
+  | "python"
+  | "fastapi"
+  | "nextjs"
+  | "typescript"
+  | "nodejs"
+  | "sqlite"
+  | "gemini"
+  | "c"
+  | "cplusplus"
+  | "linux";
+
 export type CodeProject = {
   title: string;
   description: string;
   stack: string;
+  visual: "cue" | "saga" | "kernel";
+  technologies: TechKey[];
   linkLabel?: string;
   projectUrl?: string;
   availability?: string;
@@ -30,6 +44,8 @@ export const codeProjects: CodeProject[] = [
     description:
       "A direction-first voice studio that turns plain-English notes into expressive, line-by-line performances. I built model and voice fallbacks, guarded settings, content-addressed audio caching, retakes, DSP feedback, and a private local voice-cloning path.",
     stack: "Python · FastAPI · Next.js · TypeScript",
+    visual: "cue",
+    technologies: ["python", "fastapi", "nextjs", "typescript"],
     linkLabel: "Explore Cue",
     projectUrl: "https://github.com/vjadh07/cue",
   },
@@ -38,6 +54,8 @@ export const codeProjects: CodeProject[] = [
     description:
       "An adversarial evidence-auditing agent for AI-written reports. Saga maps individual claims, researches support and contradictions, validates citations and source quality, checks dates and arithmetic, then returns corrected prose with a verifiable Trust Passport.",
     stack: "TypeScript · Node.js · SQLite · Gemini",
+    visual: "saga",
+    technologies: ["typescript", "nodejs", "sqlite", "gemini"],
     linkLabel: "Try Saga",
     projectUrl: "https://saga-omega-seven.vercel.app/demo",
   },
@@ -46,6 +64,8 @@ export const codeProjects: CodeProject[] = [
     description:
       "A monolithic x86_64 kernel with virtual memory management, ELF executable loading, paging, multicore support, a Round-Robin scheduler, and system-call interfaces for user-space programs.",
     stack: "C · C++ · Linux · x86_64 Assembly",
+    visual: "kernel",
+    technologies: ["c", "cplusplus", "linux"],
     availability: "Systems coursework · source private",
   },
 ];
