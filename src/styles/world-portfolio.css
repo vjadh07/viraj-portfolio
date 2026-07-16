@@ -385,7 +385,7 @@ img {
   position: absolute;
   bottom: -6rem;
   left: 63%;
-  z-index: 2;
+  z-index: 4;
   width: clamp(17rem, 26vw, 30rem);
   margin: 0;
   pointer-events: none;
@@ -425,7 +425,7 @@ img {
 
 .code-side-note {
   position: relative;
-  z-index: 3;
+  z-index: 5;
   align-self: end;
   margin-bottom: 9vh;
   padding: 1.7rem;
