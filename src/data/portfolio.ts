@@ -26,6 +26,13 @@ export type PhotoSlot = {
   note: string;
 };
 
+export type GitHubExperiment = {
+  title: string;
+  description: string;
+  stack: string;
+  url: string;
+};
+
 export const profile = {
   name: "Viraj Jadhav",
   codeTitle: "Computer science, shaped with curiosity",
@@ -82,6 +89,29 @@ export const techGroups = [
   {
     title: "Interested in",
     items: ["Reliable AI systems", "Systems software", "Human-centered products"],
+  },
+];
+
+export const githubProfileUrl = "https://github.com/vjadh07";
+
+export const githubExperiments: GitHubExperiment[] = [
+  {
+    title: "Not a Robot",
+    description: "A hand-tracked CAPTCHA that turns your own face into an in-air puzzle.",
+    stack: "JavaScript · MediaPipe",
+    url: "https://github.com/vjadh07/not-a-robot",
+  },
+  {
+    title: "Glass",
+    description: "A webcam mirror that fogs with your breath and lets you write with a fingertip.",
+    stack: "Canvas · Web Audio",
+    url: "https://github.com/vjadh07/glass",
+  },
+  {
+    title: "Interactive 3D Portfolio",
+    description: "An earlier portfolio experiment built as an explorable Three.js scene.",
+    stack: "TypeScript · Three.js",
+    url: "https://github.com/vjadh07/interactive-3d-portfolio",
   },
 ];
 

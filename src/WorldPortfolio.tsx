@@ -31,6 +31,8 @@ import { WorldChapter } from "./components/WorldChapter";
 import {
   clothingSlots,
   codeProjects,
+  githubExperiments,
+  githubProfileUrl,
   movies,
   personalPhotos,
   profile,
@@ -248,6 +250,41 @@ export function WorldPortfolio() {
                 </article>
               ))}
             </div>
+
+            <section className="github-archive" aria-labelledby="github-archive-title">
+              <div className="github-archive__topline">
+                <GithubLogo aria-hidden="true" />
+                <div>
+                  <p>More experiments, coursework, and works in progress</p>
+                  <h3 id="github-archive-title">The rest of the workbench</h3>
+                </div>
+                <a
+                  className="github-profile-link"
+                  href={githubProfileUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  github.com/vjadh07 <ArrowUpRight aria-hidden="true" />
+                </a>
+              </div>
+
+              <div className="github-experiment-list">
+                {githubExperiments.map((experiment) => (
+                  <a
+                    className="github-experiment"
+                    href={experiment.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={experiment.title}
+                  >
+                    <span>{experiment.stack}</span>
+                    <strong>{experiment.title}</strong>
+                    <p>{experiment.description}</p>
+                    <ArrowUpRight aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+            </section>
           </Paper>
         </div>
 

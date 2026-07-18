@@ -453,7 +453,7 @@ img {
 
 .code-project-list {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: clamp(1.25rem, 3vw, 3rem);
   margin-top: clamp(2.5rem, 5vw, 5rem);
 }
@@ -470,17 +470,22 @@ img {
 }
 
 .code-project-1 {
-  grid-row: span 2;
-  min-height: 26rem;
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(17rem, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(1.6rem, 4vw, 4rem);
+  min-height: 0;
   color: #f8f4e8;
   background: #2e4d3e;
 }
 
 .code-project-2 {
+  grid-column: 1 / 7;
   background: #e9d495;
 }
 
 .code-project-3 {
+  grid-column: 7 / -1;
   background: #d5dfe2;
 }
 
@@ -507,6 +512,17 @@ img {
   box-shadow: 5px 6px 0 rgb(13 38 27 / 30%);
   clip-path: polygon(2% 1%, 23% 3%, 45% 0, 68% 2%, 98% 1%, 100% 94%, 74% 98%, 48% 95%, 25% 100%, 1% 96%);
   transform: rotate(-1deg);
+}
+
+.code-project-1 .project-artifact {
+  min-height: clamp(17rem, 27vw, 25rem);
+  align-self: stretch;
+  margin-bottom: 0;
+}
+
+.code-project-1 .project-copy {
+  align-self: center;
+  margin-top: 0;
 }
 
 .cue-direction-slip {
@@ -748,6 +764,121 @@ img {
 
 .code-project-1 a {
   color: #f0c8bc;
+}
+
+.github-archive {
+  margin-top: clamp(2.5rem, 5vw, 5rem);
+  padding: clamp(1.5rem, 3vw, 2.6rem);
+  color: #fff8e9;
+  background: #b74634;
+  clip-path: polygon(1% 2%, 18% 0, 39% 2%, 61% 0.5%, 80% 2.2%, 99% 0.6%, 98% 97%, 78% 99%, 58% 97%, 36% 100%, 2% 97%);
+}
+
+.github-archive__topline {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(0.9rem, 2vw, 1.5rem);
+}
+
+.github-archive__topline > svg {
+  width: clamp(2.8rem, 5vw, 4.5rem);
+  height: clamp(2.8rem, 5vw, 4.5rem);
+}
+
+.github-archive__topline p {
+  margin: 0 0 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 760;
+}
+
+.github-archive__topline h3 {
+  color: inherit;
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  line-height: 0.95;
+}
+
+.github-profile-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.8rem;
+  color: #193228;
+  font-size: 0.86rem;
+  font-weight: 820;
+  text-decoration: none;
+  background: #f1d67d;
+  box-shadow: 4px 4px 0 #66251d;
+  clip-path: polygon(2% 4%, 23% 0, 49% 4%, 74% 1%, 98% 5%, 97% 94%, 72% 100%, 46% 96%, 20% 100%, 1% 94%);
+  transform: rotate(1.2deg);
+}
+
+.github-profile-link svg,
+.github-experiment > svg {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+.github-experiment-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.8rem, 2vw, 1.3rem);
+  margin-top: 1.6rem;
+}
+
+.github-experiment {
+  position: relative;
+  display: grid;
+  min-height: 11rem;
+  align-content: start;
+  padding: 1.1rem 1.15rem 1.25rem;
+  color: #193228;
+  text-decoration: none;
+  background: #faf3df;
+  box-shadow: 4px 5px 0 rgb(71 22 16 / 32%);
+  clip-path: polygon(2% 2%, 25% 0, 49% 3%, 75% 0, 98% 2%, 97% 96%, 73% 100%, 48% 97%, 23% 100%, 1% 96%);
+}
+
+.github-experiment:nth-child(1) {
+  transform: rotate(-0.8deg);
+}
+
+.github-experiment:nth-child(2) {
+  transform: rotate(0.9deg);
+}
+
+.github-experiment:nth-child(3) {
+  transform: rotate(-0.45deg);
+}
+
+.github-experiment > span {
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 820;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.github-experiment > strong {
+  margin-top: 0.5rem;
+  font-family: "Newsreader Variable", ui-serif, Georgia, serif;
+  font-size: clamp(1.45rem, 2.3vw, 2.1rem);
+  line-height: 1;
+}
+
+.github-experiment > p {
+  margin: 0.65rem 0 0;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.github-experiment > svg {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.9rem;
+  color: var(--accent);
 }
 
 .code-toolkit-panel {
@@ -1147,6 +1278,16 @@ img {
   .code-project:hover .tech-sticker {
     transform: translateY(-2px) rotate(0);
   }
+
+  .github-profile-link,
+  .github-experiment {
+    transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .github-profile-link:hover,
+  .github-experiment:hover {
+    transform: translateY(-3px) rotate(0);
+  }
 }
 
 @supports (animation-timeline: view()) {
@@ -1193,6 +1334,37 @@ img {
 
   .code-side-note {
     display: none;
+  }
+
+  .code-project-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .code-project-1 .project-artifact {
+    min-height: 15rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .code-project-2,
+  .code-project-3 {
+    grid-column: 1 / -1;
+  }
+
+  .github-archive__topline {
+    grid-template-columns: auto 1fr;
+  }
+
+  .github-profile-link {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .github-experiment-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .github-experiment:last-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -1335,8 +1507,15 @@ img {
   }
 
   .code-project-1 {
+    display: flex;
+    grid-column: 1;
     grid-row: auto;
     min-height: 19rem;
+  }
+
+  .code-project-2,
+  .code-project-3 {
+    grid-column: 1;
   }
 
   .project-artifact--cue {
@@ -1353,6 +1532,27 @@ img {
 
   .tech-sticker {
     font-size: 0.68rem;
+  }
+
+  .github-archive__topline {
+    grid-template-columns: 1fr;
+  }
+
+  .github-archive__topline > svg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .github-profile-link {
+    justify-self: start;
+  }
+
+  .github-experiment-list {
+    grid-template-columns: 1fr;
+  }
+
+  .github-experiment {
+    min-height: 10rem;
   }
 
   .toolkit-groups section,
