@@ -16,12 +16,25 @@ import {
 import {
   siC,
   siCplusplus,
+  siCss,
+  siDjango,
+  siDocker,
+  siExpress,
   siFastapi,
+  siGit,
+  siGithub,
   siGooglegemini,
+  siHtml5,
+  siJavascript,
   siLinux,
+  siMongodb,
+  siMysql,
   siNextdotjs,
   siNodedotjs,
+  siOpenjdk,
+  siPostgresql,
   siPython,
+  siReact,
   siSqlite,
   siTypescript,
 } from "simple-icons";
@@ -31,6 +44,7 @@ import { WorldChapter } from "./components/WorldChapter";
 import {
   clothingSlots,
   codeProjects,
+  currentFocus,
   githubExperiments,
   githubProfileUrl,
   movies,
@@ -50,8 +64,21 @@ const techIcons = {
   fastapi: siFastapi,
   nextjs: siNextdotjs,
   typescript: siTypescript,
+  javascript: siJavascript,
+  java: { ...siOpenjdk, title: "Java" },
+  html: siHtml5,
+  css: siCss,
+  react: siReact,
+  django: siDjango,
+  express: siExpress,
   nodejs: siNodedotjs,
+  postgresql: siPostgresql,
+  mysql: siMysql,
+  mongodb: siMongodb,
   sqlite: siSqlite,
+  docker: siDocker,
+  git: siGit,
+  github: siGithub,
   gemini: siGooglegemini,
   c: siC,
   cplusplus: siCplusplus,
@@ -65,7 +92,7 @@ function TechSticker({ technology, index }: { technology: TechKey; index: number
 
   return (
     <span
-      className={`tech-sticker tech-sticker-${index + 1}`}
+      className={`tech-sticker tech-sticker-${(index % 4) + 1}`}
       style={{ "--tech-color": `#${icon.hex}` } as CSSProperties}
     >
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -288,21 +315,53 @@ export function WorldPortfolio() {
           </Paper>
         </div>
 
-        <div className="chapter-panel code-toolkit-panel">
+        <div className="chapter-panel code-toolkit-panel" id="skills">
           <Paper className="toolkit-paper" tilt={-1.5}>
-            <GithubLogo aria-hidden="true" />
-            <h2>The working toolkit</h2>
+            <div className="toolkit-heading">
+              <Code aria-hidden="true" />
+              <div>
+                <p className="chapter-kicker">Technical skills</p>
+                <h2>Technical skills, in practice.</h2>
+                <p>
+                  The languages, frameworks and systems I use to move from an
+                  idea to working software.
+                </p>
+              </div>
+            </div>
+
             <div className="toolkit-groups">
-              {techGroups.map((group) => (
-                <section key={group.title}>
-                  <h3>{group.title}</h3>
-                  <ul>
-                    {group.items.map((item, itemIndex) => (
-                      <li key={`${group.title}-${itemIndex}`}>{item}</li>
+              {techGroups.map((group, groupIndex) => (
+                <section
+                  className={`toolkit-group toolkit-group-${groupIndex + 1}`}
+                  key={group.title}
+                >
+                  <div className="toolkit-group__copy">
+                    <h3>{group.title}</h3>
+                    <p>{group.note}</p>
+                  </div>
+                  <div
+                    className="toolkit-sticker-cloud"
+                    aria-label={`${group.title} technologies`}
+                  >
+                    {group.technologies.map((technology, technologyIndex) => (
+                      <TechSticker
+                        key={technology}
+                        technology={technology}
+                        index={technologyIndex + groupIndex}
+                      />
                     ))}
-                  </ul>
+                  </div>
                 </section>
               ))}
+            </div>
+
+            <div className="skills-focus-note">
+              <strong>Where I want to keep going</strong>
+              <ul>
+                {currentFocus.map((focus) => (
+                  <li key={focus}>{focus}</li>
+                ))}
+              </ul>
             </div>
           </Paper>
         </div>

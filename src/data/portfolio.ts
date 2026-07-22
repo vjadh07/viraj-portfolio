@@ -3,8 +3,21 @@ export type TechKey =
   | "fastapi"
   | "nextjs"
   | "typescript"
+  | "javascript"
+  | "java"
+  | "html"
+  | "css"
+  | "react"
+  | "django"
+  | "express"
   | "nodejs"
+  | "postgresql"
+  | "mysql"
+  | "mongodb"
   | "sqlite"
+  | "docker"
+  | "git"
+  | "github"
   | "gemini"
   | "c"
   | "cplusplus"
@@ -79,17 +92,52 @@ export const codeProjects: CodeProject[] = [
 
 export const techGroups = [
   {
-    title: "Languages",
-    items: ["Python", "TypeScript", "C / C++"],
+    title: "Languages and foundations",
+    note: "My daily drivers, plus the lower-level languages behind my systems work.",
+    technologies: [
+      "python",
+      "typescript",
+      "javascript",
+      "java",
+      "c",
+      "cplusplus",
+    ] as TechKey[],
   },
   {
-    title: "Building with",
-    items: ["FastAPI + Next.js", "Node.js + SQLite", "Linux + x86_64"],
+    title: "Web and APIs",
+    note: "The front-end and back-end tools I use to turn an idea into a working product.",
+    technologies: [
+      "react",
+      "nextjs",
+      "fastapi",
+      "django",
+      "nodejs",
+      "express",
+      "html",
+      "css",
+    ] as TechKey[],
   },
   {
-    title: "Interested in",
-    items: ["Reliable AI systems", "Systems software", "Human-centered products"],
+    title: "Data, systems and tools",
+    note: "Persistence, containers, source control and the environments behind the work.",
+    technologies: [
+      "postgresql",
+      "mysql",
+      "mongodb",
+      "sqlite",
+      "docker",
+      "linux",
+      "git",
+      "github",
+    ] as TechKey[],
   },
+];
+
+export const currentFocus = [
+  "Reliable AI systems",
+  "Backend architecture",
+  "Creative interfaces",
+  "Low-level systems",
 ];
 
 export const githubProfileUrl = "https://github.com/vjadh07";
