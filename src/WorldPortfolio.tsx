@@ -1,43 +1,39 @@
 import type { CSSProperties } from "react";
-import {
-  ArrowDownRight,
-  ArrowUpRight,
-  Camera,
-  Code,
-  FilmSlate,
-  GithubLogo,
-  Heart,
-  MusicNotes,
-  Needle,
-  Scissors,
-  TerminalWindow,
-  TShirt,
-} from "@phosphor-icons/react";
-import {
-  siC,
-  siCplusplus,
-  siCss,
-  siDjango,
-  siDocker,
-  siExpress,
-  siFastapi,
-  siGit,
-  siGithub,
-  siGooglegemini,
-  siHtml5,
-  siJavascript,
-  siLinux,
-  siMongodb,
-  siMysql,
-  siNextdotjs,
-  siNodedotjs,
-  siOpenjdk,
-  siPostgresql,
-  siPython,
-  siReact,
-  siSqlite,
-  siTypescript,
-} from "simple-icons";
+import { ArrowDownRight } from "@phosphor-icons/react/dist/csr/ArrowDownRight";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/csr/ArrowUpRight";
+import { Camera } from "@phosphor-icons/react/dist/csr/Camera";
+import { Code } from "@phosphor-icons/react/dist/csr/Code";
+import { FilmSlate } from "@phosphor-icons/react/dist/csr/FilmSlate";
+import { GithubLogo } from "@phosphor-icons/react/dist/csr/GithubLogo";
+import { Heart } from "@phosphor-icons/react/dist/csr/Heart";
+import { MusicNotes } from "@phosphor-icons/react/dist/csr/MusicNotes";
+import { Needle } from "@phosphor-icons/react/dist/csr/Needle";
+import { Scissors } from "@phosphor-icons/react/dist/csr/Scissors";
+import { TerminalWindow } from "@phosphor-icons/react/dist/csr/TerminalWindow";
+import { TShirt } from "@phosphor-icons/react/dist/csr/TShirt";
+import cIcon from "simple-icons/icons/c.svg";
+import cplusplusIcon from "simple-icons/icons/cplusplus.svg";
+import cssIcon from "simple-icons/icons/css.svg";
+import djangoIcon from "simple-icons/icons/django.svg";
+import dockerIcon from "simple-icons/icons/docker.svg";
+import expressIcon from "simple-icons/icons/express.svg";
+import fastapiIcon from "simple-icons/icons/fastapi.svg";
+import gitIcon from "simple-icons/icons/git.svg";
+import githubIcon from "simple-icons/icons/github.svg";
+import geminiIcon from "simple-icons/icons/googlegemini.svg";
+import htmlIcon from "simple-icons/icons/html5.svg";
+import javascriptIcon from "simple-icons/icons/javascript.svg";
+import linuxIcon from "simple-icons/icons/linux.svg";
+import mongodbIcon from "simple-icons/icons/mongodb.svg";
+import mysqlIcon from "simple-icons/icons/mysql.svg";
+import nextjsIcon from "simple-icons/icons/nextdotjs.svg";
+import nodejsIcon from "simple-icons/icons/nodedotjs.svg";
+import javaIcon from "simple-icons/icons/openjdk.svg";
+import postgresqlIcon from "simple-icons/icons/postgresql.svg";
+import pythonIcon from "simple-icons/icons/python.svg";
+import reactIcon from "simple-icons/icons/react.svg";
+import sqliteIcon from "simple-icons/icons/sqlite.svg";
+import typescriptIcon from "simple-icons/icons/typescript.svg";
 import { Paper, Tape } from "./components/CollagePieces";
 import { SiteNav } from "./components/SiteNav";
 import { WorldChapter } from "./components/WorldChapter";
@@ -60,30 +56,30 @@ const assetPath = (filename: string) =>
   `${import.meta.env.BASE_URL}assets/${filename}`;
 
 const techIcons = {
-  python: siPython,
-  fastapi: siFastapi,
-  nextjs: siNextdotjs,
-  typescript: siTypescript,
-  javascript: siJavascript,
-  java: { ...siOpenjdk, title: "Java" },
-  html: siHtml5,
-  css: siCss,
-  react: siReact,
-  django: siDjango,
-  express: siExpress,
-  nodejs: siNodedotjs,
-  postgresql: siPostgresql,
-  mysql: siMysql,
-  mongodb: siMongodb,
-  sqlite: siSqlite,
-  docker: siDocker,
-  git: siGit,
-  github: siGithub,
-  gemini: siGooglegemini,
-  c: siC,
-  cplusplus: siCplusplus,
-  linux: siLinux,
-} satisfies Record<TechKey, { hex: string; path: string; title: string }>;
+  python: { title: "Python", hex: "3776AB", url: pythonIcon },
+  fastapi: { title: "FastAPI", hex: "009688", url: fastapiIcon },
+  nextjs: { title: "Next.js", hex: "000000", url: nextjsIcon },
+  typescript: { title: "TypeScript", hex: "3178C6", url: typescriptIcon },
+  javascript: { title: "JavaScript", hex: "F7DF1E", url: javascriptIcon },
+  java: { title: "Java", hex: "000000", url: javaIcon },
+  html: { title: "HTML5", hex: "E34F26", url: htmlIcon },
+  css: { title: "CSS", hex: "663399", url: cssIcon },
+  react: { title: "React", hex: "61DAFB", url: reactIcon },
+  django: { title: "Django", hex: "092E20", url: djangoIcon },
+  express: { title: "Express", hex: "0A0A0A", url: expressIcon },
+  nodejs: { title: "Node.js", hex: "5FA04E", url: nodejsIcon },
+  postgresql: { title: "PostgreSQL", hex: "4169E1", url: postgresqlIcon },
+  mysql: { title: "MySQL", hex: "4479A1", url: mysqlIcon },
+  mongodb: { title: "MongoDB", hex: "47A248", url: mongodbIcon },
+  sqlite: { title: "SQLite", hex: "003B57", url: sqliteIcon },
+  docker: { title: "Docker", hex: "2496ED", url: dockerIcon },
+  git: { title: "Git", hex: "F03C2E", url: gitIcon },
+  github: { title: "GitHub", hex: "181717", url: githubIcon },
+  gemini: { title: "Google Gemini", hex: "8E75B2", url: geminiIcon },
+  c: { title: "C", hex: "A8B9CC", url: cIcon },
+  cplusplus: { title: "C++", hex: "00599C", url: cplusplusIcon },
+  linux: { title: "Linux", hex: "FCC624", url: linuxIcon },
+} satisfies Record<TechKey, { hex: string; title: string; url: string }>;
 
 const cueWaveform = [28, 46, 62, 38, 74, 90, 58, 44, 78, 96, 68, 52, 84, 64, 40, 30];
 
@@ -93,11 +89,14 @@ function TechSticker({ technology, index }: { technology: TechKey; index: number
   return (
     <span
       className={`tech-sticker tech-sticker-${(index % 4) + 1}`}
-      style={{ "--tech-color": `#${icon.hex}` } as CSSProperties}
+      style={
+        {
+          "--tech-color": `#${icon.hex}`,
+          "--tech-icon": `url("${icon.url}")`,
+        } as CSSProperties
+      }
     >
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d={icon.path} />
-      </svg>
+      <span className="tech-sticker__icon" aria-hidden="true" />
       <span>{icon.title}</span>
     </span>
   );

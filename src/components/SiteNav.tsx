@@ -1,4 +1,5 @@
-import { List, X } from "@phosphor-icons/react";
+import { List } from "@phosphor-icons/react/dist/csr/List";
+import { X } from "@phosphor-icons/react/dist/csr/X";
 import { useState } from "react";
 import { profile } from "../data/portfolio";
 

@@ -736,11 +736,13 @@ img {
   transform: rotate(2.6deg);
 }
 
-.tech-sticker svg {
+.tech-sticker__icon {
   width: 1.05rem;
   height: 1.05rem;
   flex: 0 0 auto;
-  fill: var(--tech-color);
+  background: var(--tech-color);
+  -webkit-mask: var(--tech-icon) center / contain no-repeat;
+  mask: var(--tech-icon) center / contain no-repeat;
 }
 
 .code-project a {
@@ -986,7 +988,7 @@ img {
   box-shadow: 4px 4px 0 rgb(13 38 27 / 18%);
 }
 
-.toolkit-sticker-cloud .tech-sticker svg {
+.toolkit-sticker-cloud .tech-sticker__icon {
   width: 1.25rem;
   height: 1.25rem;
 }
