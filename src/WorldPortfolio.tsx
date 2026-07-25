@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { ArrowBendUpLeft } from "@phosphor-icons/react/dist/csr/ArrowBendUpLeft";
 import { ArrowDownRight } from "@phosphor-icons/react/dist/csr/ArrowDownRight";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/csr/ArrowUpRight";
 import { Camera } from "@phosphor-icons/react/dist/csr/Camera";
@@ -213,6 +214,8 @@ export function WorldPortfolio() {
             </a>
           </Paper>
 
+          <span className="hero-paper-sun" aria-hidden="true" />
+
           <figure className="hero-portrait">
             <img
               src={assetPath("viraj-paper-cutout.png")}
@@ -228,6 +231,12 @@ export function WorldPortfolio() {
             <Code aria-hidden="true" />
             <p>Software can be rigorous and still feel personal.</p>
           </Paper>
+
+          <ArrowBendUpLeft
+            className="hero-doodle-arrow"
+            weight="light"
+            aria-hidden="true"
+          />
         </div>
 
         <div className="chapter-panel code-project-panel" id="projects">
