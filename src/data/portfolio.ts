@@ -48,7 +48,8 @@ export type GitHubExperiment = {
 
 export const profile = {
   name: "Viraj Jadhav",
-  codeTitle: "Computer science, shaped with curiosity",
+  codeTitle: "Computer science, shaped with",
+  codeTitleAccent: "curiosity",
   codeIntro:
     "I build useful software, explore unfamiliar systems, and care deeply about how technology feels to use.",
   clothingIntro:

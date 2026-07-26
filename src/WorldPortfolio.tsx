@@ -5,6 +5,7 @@ import { ArrowUpRight } from "@phosphor-icons/react/dist/csr/ArrowUpRight";
 import { Camera } from "@phosphor-icons/react/dist/csr/Camera";
 import { Code } from "@phosphor-icons/react/dist/csr/Code";
 import { FilmSlate } from "@phosphor-icons/react/dist/csr/FilmSlate";
+import { Flower } from "@phosphor-icons/react/dist/csr/Flower";
 import { GithubLogo } from "@phosphor-icons/react/dist/csr/GithubLogo";
 import { Heart } from "@phosphor-icons/react/dist/csr/Heart";
 import { MusicNotes } from "@phosphor-icons/react/dist/csr/MusicNotes";
@@ -203,16 +204,35 @@ export function WorldPortfolio() {
         labelledBy="code-title"
       >
         <div className="chapter-panel code-intro-panel">
-          <Paper className="code-hero-paper" tilt={-1.2}>
-            <Tape className="tape-wide" />
-            <p className="chapter-kicker">Computer science</p>
-            <h1 id="code-title">{profile.name}</h1>
-            <h2>{profile.codeTitle}</h2>
-            <p>{profile.codeIntro}</p>
-            <a className="chapter-cta" href="#projects">
-              See projects <ArrowDownRight aria-hidden="true" />
-            </a>
-          </Paper>
+          <div className="code-hero-stack">
+            <span
+              className="hero-card-layer hero-card-layer--sage"
+              aria-hidden="true"
+            />
+            <span
+              className="hero-card-layer hero-card-layer--rust"
+              aria-hidden="true"
+            />
+
+            <Paper className="code-hero-paper" tilt={-1.2}>
+              <Tape className="tape-wide" />
+              <span className="hero-botanical-stamp" aria-hidden="true">
+                <Flower weight="duotone" />
+              </span>
+              <p className="chapter-kicker">Computer science</p>
+              <h1 id="code-title">{profile.name}</h1>
+              <h2>
+                {profile.codeTitle}{" "}
+                <span className="hero-curiosity">
+                  {profile.codeTitleAccent}
+                </span>
+              </h2>
+              <p>{profile.codeIntro}</p>
+              <a className="chapter-cta" href="#projects">
+                See projects <ArrowDownRight aria-hidden="true" />
+              </a>
+            </Paper>
+          </div>
 
           <span className="hero-paper-sun" aria-hidden="true" />
 
